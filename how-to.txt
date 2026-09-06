@@ -1,0 +1,19 @@
+install all required linux (ubuntu 24) utilities: 
+sudo apt-get update
+sudo apt-get install gawk wget git diffstat unzip texinfo gcc-multilib \
+build-essential chrpath socat cpio python3 python3-pip python3-pexpect \
+xz-utils debianutils iputils-ping python3-git python3-jinja2 python3-subunit \
+zstd liblz4-tool file locales libsdl1.2-dev xterm
+
+clone this repo
+sysn all submodules using yocto 
+
+
+
+
+to source the envirenment 
+source build.sh env 
+to build an image 
+build.sh build 
+to backup updated local.conf, bblayer.conf 
+build.sh back
