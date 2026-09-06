@@ -1,0 +1,12 @@
+[submodule "sources/meta-raspberrypi"]
+	path = sources/meta-raspberrypi
+	url = ttps://github.com/agherzan/meta-raspberrypi.git
+	branch = scarthgaph
+[submodule "sources/poky"]
+	path = sources/poky
+	url = https://git.yoctoproject.org/poky.git
+	branch = scarthgaph
+[submodule "sources/meta-openembedded"]
+	path = sources/meta-openembedded
+	url = https://git.openembedded.org/meta-openembedded
+	branch = scarthgaph
