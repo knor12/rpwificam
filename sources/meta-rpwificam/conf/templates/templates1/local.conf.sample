@@ -17,6 +17,12 @@
 DL_DIR = "${TOPDIR}/../downloads"
 SSTATE_DIR = "${TOPDIR}/../sstate-cache"
 
+IMAGE_FSTYPES="tar.bz2 wic"
+ENABLE_UART="1"
+
+#required for ffmpeg
+LICENSE_FLAGS_ACCEPTED += "commercial"
+
 #
 # Machine Selection
 #
