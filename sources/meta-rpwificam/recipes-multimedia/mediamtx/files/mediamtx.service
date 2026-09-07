@@ -1,0 +1,22 @@
+[Unit]
+Description=MediaMTX RTSP Media Server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/mediamtx /etc/mediamtx.yml
+
+# Restart MediaMTX automatically if it crashes
+Restart=always
+RestartSec=2
+
+# Give MediaMTX a clean shutdown
+KillSignal=SIGINT
+TimeoutStopSec=10
+
+# Security / runtime behavior
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
