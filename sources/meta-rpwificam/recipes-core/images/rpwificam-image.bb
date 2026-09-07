@@ -32,7 +32,7 @@ nano \
 less \
 "
 
-
+IMAGE_INSTALL:append = " packagegroup-rpwificam-camera"
 
 
 IMAGE_FSTYPES = "tar.bz2 wic"

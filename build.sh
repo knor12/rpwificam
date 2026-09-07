@@ -4,10 +4,10 @@
 #DISTRO_VERSION="custom-weston"
 IMAGE_NAME="rpwificam-image"
 MACHINE_NAME="raspberrypi3-64"  # Default; override with --machine
-BUILD_DIRECTORY="$PWD/build"
-DOWNLOAD_DIRECTORY="$PWD/downloads"
-SSTATE_DIRECTORY="$PWD/sstate-cache"
+BUILD_DIRECTORY="$PWD/build" 
 TEMPLATES_DIRECTORY="$PWD/sources/meta-rpwificam/conf/templates/templates1/"
+#DOWNLOAD_DIRECTORY="$PWD/downloads" are now defined in the template local.conf 
+#SSTATE_DIRECTORY="$PWD/sstate-cache" are now defined in the template local.conf 
 
 
 
@@ -50,18 +50,12 @@ function source_env() {
 
     # Save our configuration values before Yocto changes the environment
     local machine_name="$MACHINE_NAME"
-    local download_directory="$DOWNLOAD_DIRECTORY"
-    local sstate_directory="$SSTATE_DIRECTORY"
     local build_directory="$BUILD_DIRECTORY"
 
  
 
     # Re-apply our environment variables AFTER oe-init-build-env
-    export DL_DIR="$download_directory"
-    export SSTATE_DIR="$sstate_directory"
     export MACHINE="$machine_name"
-    export IMAGE_FSTYPES="tar.bz2 wic"
-    export ENABLE_UART="1"
     export TEMPLATECONF="$TEMPLATES_DIRECTORY"
     #export DISTRO="$DISTRO_VERSION"
 
@@ -79,11 +73,9 @@ function source_env() {
     echo " Yocto environment initialized"
     echo "========================================"
     echo "MACHINE       = $MACHINE"
-    echo "DL_DIR        = $DL_DIR"
-    echo "SSTATE_DIR    = $SSTATE_DIR"
+    echo "DL_DIR        = defined in ${TEMPLATECONF}/local.conf.sample"
+    echo "SSTATE_DIR    = defined in ${TEMPLATECONF}/local.conf.sample"
     echo "BUILD_DIR     = $BUILDDIR"
-    echo "IMAGE_FSTYPES = $IMAGE_FSTYPES"
-    echo "ENABLE_UART   = $ENABLE_UART"
     echo "========================================"
 
 }
