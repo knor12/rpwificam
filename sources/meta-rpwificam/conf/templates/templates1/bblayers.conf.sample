@@ -12,4 +12,6 @@ BBLAYERS ?= " \
   ${TOPDIR}/../sources/meta-raspberrypi \
   ${TOPDIR}/../sources/meta-openembedded/meta-oe \
   ${TOPDIR}/../sources/meta-rpwificam \
+  ${TOPDIR}/../sources/meta-openembedded/meta-multimedia \
+  ${TOPDIR}/../sources/meta-openembedded/meta-python \
 "
