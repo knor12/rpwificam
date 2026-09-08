@@ -1,0 +1,17 @@
+logLevel: info
+
+rtsp: true
+rtspAddress: :8554
+
+paths:
+  # CSI Camera (Channel 1)
+  cam1:
+    source: publisher
+
+  # USB Camera 1 (Channel 2)
+  cam2:
+    source: publisher
+
+  # USB Camera 2 (Channel 3)
+  cam3:
+    source: publisher
