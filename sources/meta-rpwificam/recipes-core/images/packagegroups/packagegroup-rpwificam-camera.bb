@@ -1,6 +1,8 @@
 SUMMARY = "RPWiFiCam camera and streaming support"
 LICENSE = "MIT"
 
+PREFERRED_VERSION_ffmpeg = "7.0.2"
+
 inherit packagegroup
 
 RDEPENDS:${PN} = " \
