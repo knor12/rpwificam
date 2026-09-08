@@ -1,0 +1,18 @@
+[Unit]
+Description=FFmpeg Camera Ingestion Service
+After=mediamtx.service
+Requires=mediamtx.service
+
+[Service]
+Type=simple
+# Cam1 (CSI) via libcamera, Cam2 & Cam3 (USB) via V4L2
+ExecStart=/bin/sh -c '\
+  libcameramtx -o - | ffmpeg -re -i - -c:v libx264 -preset ultrafast -tune zerolatency -f rtsp rtsp://localhost:8554/cam1 & \
+  ffmpeg -f v4l2 -input_format mpeg -video_size 1280x720 -i /dev/v4l/by-id/usb-CAM1_ID -c:v copy -f rtsp rtsp://localhost:8554/cam2 & \
+  ffmpeg -f v4l2 -input_format mpeg -video_size 1280x720 -i /dev/v4l/by-id/usb-CAM2_ID -c:v copy -f rtsp rtsp://localhost:8554/cam3 & \
+  wait'
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
