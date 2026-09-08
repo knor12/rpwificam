@@ -11,4 +11,5 @@ RDEPENDS:${PN} = " \
     libcamera \
     libcamera-apps \
     mediamtx \
+    ffmpeg_service \
 "
