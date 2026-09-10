@@ -11,5 +11,7 @@ RDEPENDS:${PN} = " \
     libcamera \
     libcamera-apps \
     mediamtx \
-    ffmpeg_service \
+    onvif-simple-server \   
+    ffmpeg-service \ 
 "
+#ffmpeg-service
