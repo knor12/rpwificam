@@ -1,0 +1,3 @@
+# Extra parameters passed to onvif_simple_server for instance %i
+# You can override port per instance if needed
+ONVIF_ARGS="--conf /etc/onvif_simple_server/onvif_simple_server_%i.conf"

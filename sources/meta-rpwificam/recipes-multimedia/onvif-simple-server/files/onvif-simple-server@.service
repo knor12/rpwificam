@@ -1,0 +1,13 @@
+[Unit]
+Description=ONVIF Simple Server Instance %i
+After=network.target
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/default/onvif-simple-server
+ExecStart=/usr/bin/onvif_simple_server --conf /etc/onvif_simple_server/onvif_simple_server_%i.conf
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
