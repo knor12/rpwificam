@@ -14,4 +14,4 @@ BBLAYERS ?= " \
   ${TOPDIR}/../sources/meta-rpwificam \
   ${TOPDIR}/../sources/meta-openembedded/meta-multimedia \
   ${TOPDIR}/../sources/meta-openembedded/meta-python \
-"
+  "
