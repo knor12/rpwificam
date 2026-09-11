@@ -4,7 +4,23 @@ DESCRIPTION = "Minimal Raspberry Pi image with OpenSSH server support"
 #this image is based on core-image-minimal
 require recipes-core/images/core-image-minimal.bb
 
-DISTRO_FEATURES = " systemd"
+# Ensure systemd network features are in DISTRO_FEATURES
+DISTRO_FEATURES:append = " systemd networkd resolved"
+
+IMAGE_INSTALL:append = " dhcpcd"
+
+#remove from production image
+EXTRA_IMAGE_FEATURES:append = " debug-tweaks"
+
+
+# IMAGE_INSTALL:append = " \
+#     kernel-module-smsc95xx \
+#     kernel-module-uvcvideo \
+#     kernel-module-v4l2loopback \
+# "
+
+# Enable systemd-networkd and systemd-resolved auto-start
+SYSTEMD_AUTO_ENABLE:pn-systemd = "enable"
 
 VIRTUAL-RUNTIME_init_manager = "systemd"
 
